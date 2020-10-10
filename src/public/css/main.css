@@ -1,0 +1,17 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: 'Popins', sans-serif;
+}
+
+section{
+  position:  relative;
+  width: 100%;
+  min-height: 100vh;
+  /* background: url('images/bg.jpg');  */
+  background-color: orange;
+  background-size: cover;
+  background-position: center;
+ 
+}
