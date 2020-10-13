@@ -14,16 +14,13 @@
 }
 
 section{
-  position:  relative;
+  /* position:  relative; */
   width: 100%;
-  min-height: 100vh;
+  max-height: 500vh;
   padding: 100px;
-  /* background: url('../images/bg2.png'); */
-  /* background: url('../images/bg-rounded2.png'); */
   background: linear-gradient(120deg, #ff6902,#ff6902,#FFB508, #ffef09);
   background-size: cover;
-  /* background-position: center; */
-  display: flex;
+  /* display: flex; */
   justify-content: flex-start;
   align-items: center;
   opacity: -10px;
@@ -53,6 +50,13 @@ header .logo{
   letter-spacing: 1px;
 }
 
+.logo img{
+  position: relative;
+  width: 35px;
+  top: 6px;
+  margin: 0px 10px 0px 10px;
+}
+
 header .navigation{
   position: relative;
   display: flex;
@@ -68,17 +72,20 @@ header .navigation li a{
   font-size: 20px;
   font-weight: 800;
   color: #ff860f;
-  /* color: #fff; */
   margin-right: 40px;
   text-decoration: none;
 }
 
 header .navigation li a:hover{
   color: black;
+  /* box-shadow: 0 4px 2px -2px #ff860f; */
+  transition: 0.8s !important;
 }
 
 .content{
-  max-width: 600px;
+  max-width: 1100px;
+  display: inline-flex;
+  margin: 0px 50px 0px 50px
 }
 
 .content .contentBx{
@@ -86,6 +93,7 @@ header .navigation li a:hover{
   color: #fff;
   font-weight: 300;
   margin: 20px 0;
+  padding: 100px 0px 0px 0px;
 }
 
 .content .contentBx a{
@@ -102,14 +110,15 @@ header .navigation li a:hover{
   background: rgba(0,0,0,0.2);
 }
 
-.img-demo{
-  border-radius: 36px;
+.content-img-demo{
+  border-radius: 42px;
   margin: 2% 14% 0px 12%;
   box-shadow: 0 2px 15px 0 rgba(0,0,0,1.0);
+  height: 496px;
 }
 
-.img-demo img{
-  border-radius: 36px;
+.content-img-demo img{
+  /* border-radius: 36px; */
   width: 250px;
 }
 
@@ -133,10 +142,160 @@ header .navigation li a:hover{
 
 .footer svg{
   position: absolute;
-  top: 118.5%;
+  top: 115.5%;
   margin: 0 10px 0 10px;
 }
 
 .footer path{
   fill:  #f7f6f4;
 }
+
+@media(max-width: 320px){
+  header{
+    padding: 15px, 40px;
+  }
+
+  header .navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f7f6f4;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header .navigation li a{
+    font-size: 24px;
+    margin: 10px 0px;
+  }
+
+  .toggleMenu{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0px 20px 0px 0px;
+    background: url('/images/menu.png');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .toggleMenu.active{
+    margin: 0px 20px 0px 0px;
+    background: url('/images/close.png');
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+  }
+
+  .navigation.active{
+    display: flex;
+  }
+
+  section{
+    padding: 40px;
+    max-height: 500vh;
+    height: 1100px;
+  }
+
+  .content{
+    margin: 0px;
+  }
+
+  .content-img-demo{
+    position: absolute;
+    top: 90%;
+    left: 2%;
+    margin: 2% 11% 0px 11% !important;
+  }
+
+  .footer{
+    padding: 2% 10% 2% 10%;
+  }
+
+  .footer svg{
+    top: 202.5%;
+  }
+}
+
+@media(max-width: 768px){
+  header{
+    padding: 15px, 40px;
+  }
+
+  header .navigation{
+    position: fixed;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: #f7f6f4;
+    z-index: 10;
+    display: none;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+  }
+
+  header .navigation li a{
+    font-size: 24px;
+    margin: 10px 0px;
+  }
+
+  .toggleMenu{
+    position: relative;
+    width: 30px;
+    height: 30px;
+    margin: 0px 20px 0px 0px;
+    background: url('/images/menu.png');
+    background-position: center;
+    background-size: 30px;
+    background-repeat: no-repeat;
+    cursor: pointer;
+    z-index: 11;
+  }
+
+  .toggleMenu.active{
+    margin: 0px 20px 0px 0px;
+    background: url('/images/close.png');
+    background-position: center;
+    background-size: 25px;
+    background-repeat: no-repeat;
+  }
+
+  .navigation.active{
+    display: flex;
+  }
+
+  section{
+    padding: 11%;
+    max-height: 500vh;
+    height: 1100px;
+  }
+
+  .content{
+    margin: 0px;
+  }
+
+  .content-img-demo{
+    position: absolute;
+    top: 90%;
+    left: 2%;
+    margin: 2% 30% 0px 30%;
+  }
+
+  .footer{
+    padding: 2% 32% 2% 32%;
+  }
+
+  .footer svg{
+    top: 202.5%;
+  }
+} 
