@@ -54,7 +54,8 @@ class RtRoute {
                 'description': req.body.description.toString(),
                 'date': req.body.date.toString(),
                 'state': req.body.state.toString(),
-                "date_rt": `${moment_1.default(moment_1.now()).format('MM/DD/YYYY h:mm a')}`
+                "date_created": `${moment_1.default(moment_1.now()).format('MM/DD/YYYY h:mm a')}`,
+                "date_update": `${moment_1.default(moment_1.now()).format('MM/DD/YYYY h:mm a')}`
             };
             yield database_1.default.query('INSERT INTO rt set ?', [data]);
             res.status(200).json({ message: 'save' });
@@ -124,6 +125,17 @@ class RtRoute {
                 }
             });
         }));
+        this.router.post('/kms', (req, res) => {
+            const data = {
+                'id': req.body.id,
+                'date': req.body.day,
+                'mk': req.body.km,
+                'date_created': `${moment_1.default(moment_1.now()).format('MM/DD/YYYY h:mm a')}`,
+                'date_update': `${moment_1.default(moment_1.now()).format('MM/DD/YYYY h:mm a')}`
+            };
+            console.log(data);
+            res.status(200).json({ message: 'save' });
+        });
     }
 }
 const rtRoute = new RtRoute();

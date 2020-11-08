@@ -23,13 +23,14 @@ class RtRoute{
 
     this.router.post('/rts', async (req: Request, res: Response) =>{
       
-      const data ={ 
+      const data ={  
         'id' : req.body.id.toString(),
         'ot' : req.body.ot.toString(),
         'description' : req.body.description.toString(),
         'date' : req.body.date.toString(),
         'state' : req.body.state.toString(),
-        "date_rt": `${moment(now()).format('MM/DD/YYYY h:mm a')}`
+        "date_created": `${moment(now()).format('MM/DD/YYYY h:mm a')}`,
+        "date_update": `${moment(now()).format('MM/DD/YYYY h:mm a')}`
       }
       
       await pool.query('INSERT INTO rt set ?',[data]);
@@ -95,6 +96,18 @@ class RtRoute{
           res.status(200).json({rts: 'no registra'});
         }
       });
+    });
+
+    this.router.post('/kms', (req: Request, res: Response) => {
+      const data = {
+        'id': req.body.id,
+        'date': req.body.day,
+        'mk': req.body.km,
+        'date_created': `${moment(now()).format('MM/DD/YYYY h:mm a')}`,
+        'date_update': `${moment(now()).format('MM/DD/YYYY h:mm a')}`
+      }
+      console.log(data);
+      res.status(200).json({message: 'save'});
     });
   }
 }
