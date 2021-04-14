@@ -27,6 +27,7 @@ class RtRoute{
         'id' : req.body.id.toString(),
         'ot' : req.body.ot.toString(),
         'description' : req.body.description.toString(),
+        'userCreate' : req.body.description.toString(),
         'date' : req.body.date.toString(),
         'state' : req.body.state.toString(),
         "date_created": `${moment(now()).format('MM/DD/YYYY h:mm a')}`,
